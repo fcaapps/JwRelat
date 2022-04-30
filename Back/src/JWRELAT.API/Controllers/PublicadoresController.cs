@@ -11,11 +11,11 @@ namespace JWRELAT.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PublicadorController : ControllerBase
+    public class PublicadoresController : ControllerBase
     {
         private readonly DataContext _context;
         
-        public PublicadorController(DataContext context)
+        public PublicadoresController(DataContext context)
         {
             _context = context;
 

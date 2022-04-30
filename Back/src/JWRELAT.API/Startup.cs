@@ -33,6 +33,7 @@ namespace JWRELAT.API
             );
                 
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JWRELAT.API", Version = "v1" });
@@ -52,6 +53,10 @@ namespace JWRELAT.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .AllowAnyOrigin());
 
             app.UseAuthorization();
 
